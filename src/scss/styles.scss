@@ -1,1 +1,52 @@
-@import "node_modules/bootstrap/scss/bootstrap";
+@import 'node_modules/bootstrap/scss/bootstrap';
+
+.container-fluid {
+	&.hero-container {
+		background: var(--bs-red);
+		height: 800px;
+	}
+	&.about-container {
+    
+	}
+  & .about-container-col,
+  & .sponsors-container-col {
+    background: var(--bs-orange);
+    height: 400px;
+    border: 1px solid blue;
+  }
+	&.slider-container {
+		background: #151517;
+		height: 680px;
+    transform: skew(0, -1.2deg);
+    transform-origin: top left;
+	}
+
+	&.sponsors-container {
+
+	}
+	&.footer-container {
+    background: linear-gradient(#C45248, #93251C);
+		height: 200px;
+	}
+}
+
+body {
+  background: #201F24;
+}
+
+.social-wall-container {
+  padding: 80px 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  
+}
+.social-wall-item {
+  width: 280px;
+  height: 280px;
+  margin: 20px;
+  background: var(--bs-red); 
+
+}
+
