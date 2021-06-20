@@ -4,39 +4,72 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="stylesheet" href="dist/css/styles.css">
+		<link rel="stylesheet" href="dist/css/styles.css" />
+		<link
+		rel="stylesheet"
+		href="https://unpkg.com/swiper/swiper-bundle.min.css"
+	/>
 		<title>Front-end Task</title>
 	</head>
 	<body>
 		<section class="hero-container container-fluid"></section>
 
-    <section class="about-container container-fluid">
-      <div class="row">
-        <div class="about-container-col col-12 col-md-6"></div>
-        <div class="about-container-col col-12 col-md-6"></div>
-      </div>
-    </section>
-
-    <section class="slider-container container-fluid"></section>
-
-    <section class="social-wall-container container">
-        <article class="social-wall-item"></article>
-        <article class="social-wall-item"></article>
-        <article class="social-wall-item"></article>
-        <article class="social-wall-item"></article>
-        <article class="social-wall-item"></article>
-        <article class="social-wall-item"></article>
-        <article class="social-wall-item"></article>
-        <article class="social-wall-item"></article>
+		<section class="about-container container-fluid">
+			<div class="row">
+				<div class="about-container-col col-12 col-md-6"></div>
+				<div class="about-container-col col-12 col-md-6"></div>
+			</div>
 		</section>
 
-    <section class="sponsors-container container-fluid">
-      <div class="row">
-        <div class="sponsors-container-col col-12 col-md-6"></div>
-        <div class="sponsors-container-col col-12 col-md-6"></div>
-      </div>
-    </section>
+		<section class="slider-container container-fluid">
+			<div class="swiper-container">
+				<div class="swiper-wrapper">
+					<div class="swiper-slide">Slide 1</div>
+					<div class="swiper-slide">Slide 2</div>
+					<div class="swiper-slide">Slide 3</div>
+				</div>
+				<div class="swiper-button-next"></div>
+				<div class="swiper-button-prev"></div>
+			</div>
 
-    <footer class="footer-container container-fluid"></footer>
+		</section>
+
+		<section class="social-wall-container container">
+			<article class="social-wall-item"></article>
+			<article class="social-wall-item"></article>
+			<article class="social-wall-item"></article>
+			<article class="social-wall-item"></article>
+			<article class="social-wall-item"></article>
+			<article class="social-wall-item"></article>
+			<article class="social-wall-item"></article>
+			<article class="social-wall-item"></article>
+		</section>
+
+		<section class="sponsors-container container-fluid">
+			<div class="row">
+				<div class="sponsors-container-col col-12 col-md-6"></div>
+				<div class="sponsors-container-col col-12 col-md-6"></div>
+			</div>
+		</section>
+
+		<footer class="footer-container container-fluid"></footer>
+
+		<!-- <script src="dist/js/main.js" type="module"></script> -->
+
+		<script type="module">
+			import Swiper from 'https://unpkg.com/swiper/swiper-bundle.esm.browser.min.js';
+
+			const swiper = new Swiper('.swiper-container', {
+				// Optional parameters
+				loop: true,
+
+				// Navigation arrows
+				navigation: {
+					nextEl: '.swiper-button-next',
+					prevEl: '.swiper-button-prev',
+				},
+
+			});
+		</script>
 	</body>
 </html>

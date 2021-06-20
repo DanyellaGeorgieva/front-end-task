@@ -4,7 +4,7 @@ const browserSync = require('browser-sync').create();
 
 const files = {
 	scssPath: 'src/scss/styles.scss',
-	jsPath: 'src/js/',
+	jsPath: 'src/js/main.js',
 };
 
 // Sass Task
