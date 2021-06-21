@@ -1,23 +1,20 @@
 const { src, dest, watch, series } = require('gulp');
 const sass = require('gulp-sass');
 const browserSync = require('browser-sync').create();
-
-const files = {
-	scssPath: 'src/scss/styles.scss',
-	jsPath: 'src/js/main.js',
-};
+const imageMin = require('gulp-imagemin');
 
 // Sass Task
 function scssTask(){
-  return src(files.scssPath, { sourcemaps: true })
+  return src('src/scss/styles.scss', { sourcemaps: true })
     .pipe(sass().on('error', sass.logError))
     .pipe(dest('dist/css', { sourcemaps: '.' }));
 }
 
-// JavaScript Task
-function jsTask(){
-  return src(files.jsPath, { sourcemaps: true })
-    .pipe(dest('dist/js', { sourcemaps: '.' }));
+// Image Task
+function imageTask(){
+  return src('src/assets/*.png')
+  .pipe(imageMin())
+  .pipe(dest('dist/assets'));
 }
 
 // BrowserSync Tasks
@@ -38,13 +35,13 @@ function browserSyncReload(cb){
 // Watch Task
 function watchTask(){
   watch('*.html', browserSyncReload);
-  watch(['src/scss/styles.scss', 'src/js/main.js'], series(scssTask, jsTask, browserSyncReload));
+  watch(['src/scss/styles.scss'], series(scssTask, imageTask, browserSyncReload));
 }
 
 // Default Gulp task
 exports.default = series(
   scssTask,
-  jsTask,
+  imageTask,
   browserSyncServe,
   watchTask
 );
